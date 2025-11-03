@@ -1,0 +1,14 @@
+/* Importação do tema PO-UI */
+@import '@po-ui/style/css/po-theme-default.min.css';
+
+/* Estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+}

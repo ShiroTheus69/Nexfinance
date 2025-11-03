@@ -1,0 +1,35 @@
+/* Layout base: toolbar fixa em cima e menu fixo à esquerda */
+.layout-container {
+  display: flex;
+  height: calc(100vh - 64px); /* 64px é a altura padrão do po-toolbar */
+  background-color: #f9f9f9;
+}
+
+/* Menu lateral fixo */
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+}
+
+/* Área do conteúdo */
+.content-area {
+  flex: 1;
+  margin-left: 260px; /* Mesma largura do menu */
+  padding: 24px;
+  background-color: #fafafa;
+  min-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* Container interno para centralizar conteúdo */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
