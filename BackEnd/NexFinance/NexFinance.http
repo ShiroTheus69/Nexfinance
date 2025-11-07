@@ -1,0 +1,6 @@
+@NexFinance_HostAddress = https://localhost:5163
+
+GET {{NexFinance_HostAddress}}//
+Accept: application/json
+
+###

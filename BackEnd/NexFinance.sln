@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36603.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexFinance", "NexFinance\NexFinance.csproj", "{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A38CC40-6074-4D0A-BABC-3C4C936C2802}
+	EndGlobalSection
+EndGlobal

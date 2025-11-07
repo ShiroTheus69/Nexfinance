@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  api:
+    build: ./src
+    container_name: nexfinance_api
+    ports:
+      - "5163:5163"  # HTTP
+      - "7075:7075"  # HTTPS
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Database=nexfinance;Username=postgres;Password=postgres
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: nexfinance_db
+    restart: always
+    environment:
+      POSTGRES_DB: nexfinance
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    ports:
+      - "5432:5432"
