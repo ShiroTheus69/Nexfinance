@@ -1,11 +1,13 @@
-/* Layout base: toolbar fixa em cima e menu fixo à esquerda */
+/* === Layout base NexFinance === */
+
 .layout-container {
   display: flex;
-  height: calc(100vh - 64px); /* 64px é a altura padrão do po-toolbar */
-  background-color: #f9f9f9;
+  height: calc(100vh - 64px); /* altura do po-toolbar */
+  background-color: #F3F5F4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Menu lateral fixo */
+/* === MENU LATERAL === */
 .sidebar {
   width: 260px;
   flex-shrink: 0;
@@ -13,23 +15,97 @@
   top: 64px;
   left: 0;
   bottom: 0;
-  background-color: #fff;
-  border-right: 1px solid #e0e0e0;
+  background-color: #006B4E; /* verde principal */
+  color: #fff;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.08);
   overflow-y: auto;
+  transition: background-color 0.3s ease;
 }
 
-/* Área do conteúdo */
+.sidebar a {
+  display: block;
+  padding: 14px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.sidebar a:hover {
+  background-color: #009E70;
+  color: #ffffff;
+}
+
+/* === ÁREA DO CONTEÚDO === */
 .content-area {
   flex: 1;
-  margin-left: 260px; /* Mesma largura do menu */
+  margin-left: 260px; /* mesma largura do menu */
   padding: 24px;
-  background-color: #fafafa;
+  background-color: #F3F5F4;
   min-height: calc(100vh - 64px);
   overflow-y: auto;
+  transition: background-color 0.3s ease;
 }
 
-/* Container interno para centralizar conteúdo */
+/* === CONTAINER INTERNO === */
 .content-container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* === TOOLBAR (topo fixo) === */
+po-toolbar {
+  background-color: #006B4E !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+po-toolbar .po-toolbar-title {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* === SCROLL BAR personalizada === */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* === BOTÕES E LINKS GENÉRICOS === */
+.po-button {
+  background-color: #006B4E !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.po-button:hover:not([disabled]) {
+  background-color: #009E70 !important;
+  transform: translateY(-2px);
+}
+
+.po-link {
+  color: #006B4E;
+  text-decoration: none;
+}
+
+.po-link:hover {
+  color: #009E70;
+  text-decoration: underline;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .content-area {
+    margin-left: 200px;
+  }
 }

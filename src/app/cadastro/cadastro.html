@@ -1,0 +1,59 @@
+<div class="login-background">
+  <div class="login-card">
+    <img src="assets/icons/logo.jpg" alt="Logomarca" class="login-logo" />
+
+    <h2 class="login-title">Boas-vindas</h2>
+
+    <form #cadastroForm="ngForm" (ngSubmit)="cadastrar()">
+      <po-input
+        name="nome"
+        p-label="Nome Completo"
+        [(ngModel)]="nome"
+        p-required="true"
+        p-icon="po-icon-user"
+        class="po-mb-3">
+      </po-input>
+
+      <po-input
+        name="email"
+        p-label="E-mail"
+        [(ngModel)]="email"
+        p-required="true"
+        p-type="email"
+        p-icon="po-icon-mail"
+        class="po-mb-3">
+      </po-input>
+
+      <po-password
+        name="senha"
+        p-label="Senha"
+        [(ngModel)]="senha"
+        p-required="true"
+        p-icon="po-icon-lock"
+        class="po-mb-3">
+      </po-password>
+
+      <po-password
+        name="confirmarSenha"
+        p-label="Confirmar Senha"
+        [(ngModel)]="confirmarSenha"
+        p-required="true"
+        p-icon="po-icon-lock"
+        class="po-mb-4">
+      </po-password>
+
+      <po-button
+        p-label="Cadastrar"
+        p-kind="primary"
+        [p-disabled]="!!cadastroForm.invalid"
+        p-full="true"
+        (p-click)="cadastrar()">
+      </po-button>
+    </form>
+
+    <div class="po-text-center po-mt-2">
+      <span>Já tem uma conta? </span>
+      <a [routerLink]="['/login']" class="po-link">Faça Login</a>
+    </div>
+  </div>
+</div>

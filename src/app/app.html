@@ -1,21 +1,15 @@
-<po-toolbar p-title="NexFinance"></po-toolbar>
+<div *ngIf="showMenu">
+  <po-toolbar [p-title]="title"></po-toolbar>
 
-<div class="layout-container">
-  <aside class="sidebar">
-    <po-menu
-      [p-menus]="[
-        { label: 'Dashboard', link: '/dashboard', icon: 'po-icon-home' },
-        { label: 'Receitas', link: '/receitas', icon: 'po-icon-plus' },
-        { label: 'Despesas', link: '/despesas', icon: 'po-icon-minus' },
-        { label: 'Investimentos', link: '/investimentos', icon: 'po-icon-finance' },
-        { label: 'Relatórios', link: '/relatorios', icon: 'po-icon-chart-area' }
-      ]">
-    </po-menu>
-  </aside>
-  
-  <main class="content-area">
-    <div class="content-container">
-      <router-outlet></router-outlet>
-    </div>
-  </main>
+  <po-menu
+    [p-menus]="[
+      { label: 'Dashboard', link: '/dashboard', icon: 'po-icon-home' },
+      { label: 'Receitas', link: '/receitas', icon: 'po-icon-plus' },
+      { label: 'Despesas', link: '/despesas', icon: 'po-icon-minus' },
+      { label: 'Investimentos', link: '/investimentos', icon: 'po-icon-finance' },
+      { label: 'Relatórios', link: '/relatorios', icon: 'po-icon-chart-area' }
+    ]">
+  </po-menu>
 </div>
+
+<router-outlet></router-outlet>
