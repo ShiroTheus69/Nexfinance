@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "NexFinance.Api.Controllers.LancamentoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Lancamento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NexFinance.Api.Controllers.LancamentoController",
+    "Method": "Create",
+    "RelativePath": "api/Lancamento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "lancamento",
+        "Type": "NexFinance.Domain.Entities.Lancamento",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

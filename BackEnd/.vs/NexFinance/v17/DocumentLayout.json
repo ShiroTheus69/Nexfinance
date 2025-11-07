@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workstation\\NexFinance\\BackEnd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\src\\infrastructure\\context\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|solutionrelative:nexfinance\\src\\infrastructure\\context\\dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DbContext.cs",
+              "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Context\\DbContext.cs",
+              "RelativeDocumentMoniker": "NexFinance\\src\\Infrastructure\\Context\\DbContext.cs",
+              "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Context\\DbContext.cs",
+              "RelativeToolTip": "NexFinance\\src\\Infrastructure\\Context\\DbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T21:25:49.536Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

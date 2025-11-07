@@ -1,0 +1,8 @@
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.csproj.AssemblyReference.cache
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.AssemblyInfoInputs.cache
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.AssemblyInfo.cs
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.csproj.CoreCompileInputs.cache
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.MvcApplicationPartsAssemblyInfo.cs
+C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.MvcApplicationPartsAssemblyInfo.cache
