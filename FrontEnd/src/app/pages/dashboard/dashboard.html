@@ -1,32 +1,42 @@
-<po-page-default p-title="Dashboard">
-  <div class="po-row">
-    <po-widget class="po-md-4" p-title="Saldo Total" [p-height]="150">
-      <div class="po-font-text-large-bold po-text-center">R$ 0,00</div>
-      <div class="po-text-center po-mt-1">Saldo disponível</div>
-    </po-widget>
+<po-page-default p-title="Dashboard Financeiro">
+  <div class="dashboard-container">
 
-    <po-widget class="po-md-4" p-title="Receitas do Mês" [p-height]="150">
-      <div class="po-font-text-large-bold po-text-center po-text-color-07">R$ 0,00</div>
-      <div class="po-text-center po-mt-1">Total de receitas</div>
-    </po-widget>
+    <div class="po-row">
+      <po-widget class="po-md-4" p-title="Saldo Total" [p-height]="150">
+        <div class="po-text-center dashboard-value destaque">
+          R$ 0,00
+        </div>
+        <div class="po-text-center">Saldo disponível</div>
+      </po-widget>
 
-    <po-widget class="po-md-4" p-title="Despesas do Mês" [p-height]="150">
-      <div class="po-font-text-large-bold po-text-center po-text-color-11">R$ 0,00</div>
-      <div class="po-text-center po-mt-1">Total de despesas</div>
-    </po-widget>
-  </div>
+      <po-widget class="po-md-4" p-title="Receitas do Mês" [p-height]="150">
+        <div class="po-text-center dashboard-value receitas">
+          R$ 0,00
+        </div>
+        <div class="po-text-center">Total de receitas</div>
+      </po-widget>
 
-  <div class="po-row po-mt-2">
-    <po-widget class="po-md-6" p-title="Últimas Transações" [p-height]="300">
-      <div class="po-text-center po-mt-4">
-        <p>Nenhuma transação registrada</p>
-      </div>
-    </po-widget>
+      <po-widget class="po-md-4" p-title="Despesas do Mês" [p-height]="150">
+        <div class="po-text-center dashboard-value despesas">
+          R$ 0,00
+        </div>
+        <div class="po-text-center">Total de despesas</div>
+      </po-widget>
+    </div>
 
-    <po-widget class="po-md-6" p-title="Investimentos" [p-height]="300">
-      <div class="po-text-center po-mt-4">
-        <p>Nenhum investimento cadastrado</p>
-      </div>
-    </po-widget>
+    <div class="po-row po-mt-2">
+      <po-widget class="po-md-6" p-title="Últimas Transações" [p-height]="300">
+        <div class="po-text-center po-mt-4">
+          <p>Nenhuma transação registrada</p>
+        </div>
+      </po-widget>
+
+      <po-widget class="po-md-6" p-title="Investimentos" [p-height]="300">
+        <div class="po-text-center po-mt-4">
+          <p>Nenhum investimento cadastrado</p>
+        </div>
+      </po-widget>
+    </div>
+
   </div>
 </po-page-default>
