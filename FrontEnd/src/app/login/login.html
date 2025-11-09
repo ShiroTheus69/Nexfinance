@@ -1,43 +1,10 @@
 <div class="login-background">
   <div class="login-card">
-    <img src="assets/icons/logo.jpg" alt="Logomarca" class="login-logo" />
-
-    <h2 class="login-title">Bem-vindo de volta</h2>
-
-    <form #loginForm="ngForm" (ngSubmit)="login()">
-      <po-input
-        name="cpf"
-        p-label="Cpf"
-        [(ngModel)]="cpf"
-        p-required="true"
-        p-type="cpf"
-        p-icon="po-icon-user"
-        class="po-mb-3">
-      </po-input>
-
-      <po-password
-        name="senha"
-        p-label="Senha"
-        [(ngModel)]="senha"
-        p-required="true"
-        p-icon="po-icon-lock"
-        class="po-mb-4">
-      </po-password>
-
-      <po-switch
-        name="lembrar"
-        p-label="Lembrar de mim"
-        [(ngModel)]="lembrar"
-        class="po-mb-4">
-      </po-switch>
-
-      <po-button
-        p-label="Entrar"
-        p-kind="primary"
-        [p-disabled]="!!loginForm.invalid"
-        (p-click)="login()">
-      </po-button>
-    </form>
+    <po-page-login
+      [p-logo]="logo"
+      p-login-hint="Use seu e-mail e senha para entrar"
+      (p-submit)="login($event)">
+    </po-page-login>
 
     <div class="po-text-center po-mt-2">
       <span>Não tem uma conta? </span>

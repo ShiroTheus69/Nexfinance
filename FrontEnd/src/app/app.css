@@ -109,35 +109,3 @@ po-toolbar .po-toolbar-title {
     margin-left: 200px;
   }
 }
-
-/* ===== REMOVE BORDA E SOMBRA DO CONTAINER PRINCIPAL ===== */
-
-/* Remove a sombra e borda padrão do po-page-default */
-po-page-default {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Remove possíveis bordas internas (aplicadas dentro do container) */
-po-page-default > .po-page {
-  border: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
-
-/* Ajusta o corpo interno (onde fica o conteúdo da página) */
-po-page-default .po-page-content {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-/* Ajusta o cabeçalho do título */
-po-page-default .po-page-header {
-  border-bottom: none !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
-}
