@@ -1,19 +1,20 @@
 /* ===== Layout base NexFinance ===== */
-
 :host {
   display: block;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fundo da página */
 po-page-default {
   background-color: #F3F5F4 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* ===== CONTAINER CENTRAL ===== */
+/* ===== CONTAINER ===== */
 .investimentos-container {
-  margin-left: 300px; /* distância do menu lateral */
-  margin-right: 10px;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
   padding: 24px;
   background-color: transparent;
   min-height: calc(100vh - 64px);
@@ -28,27 +29,7 @@ po-page-default {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 8px;
   margin-bottom: 16px;
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .investimentos-container {
-    margin-left: 220px;
-  }
-}
-
-@media (max-width: 768px) {
-  .investimentos-container {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 16px;
-  }
-
-  .cabecalho-investimentos {
-    justify-content: center;
-  }
 }
 
 /* ===== BOTÃO ===== */
@@ -72,17 +53,26 @@ po-page-default {
   color: #444;
   font-size: 1.05rem;
   margin-top: 2rem;
+  text-align: center;
 }
 
 .mensagem-vazia strong {
   color: #006B4E;
 }
 
-/* ===== CENTRALIZAÇÃO ===== */
-.po-text-left {
-  text-align: left !important;
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .investimentos-container {
+    width: 90%;
+  }
 }
 
-.po-text-center {
-  text-align: center !important;
+@media (max-width: 768px) {
+  .investimentos-container {
+    width: 95%;
+    padding: 16px;
+  }
+  .cabecalho-investimentos {
+    justify-content: center;
+  }
 }

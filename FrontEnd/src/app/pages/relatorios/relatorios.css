@@ -1,19 +1,20 @@
 /* ===== Layout base NexFinance ===== */
-
 :host {
   display: block;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Fundo da página */
 po-page-default {
   background-color: #F3F5F4 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-/* ===== CONTAINER CENTRAL ===== */
+/* ===== CONTAINER ===== */
 .relatorios-container {
-  margin-left: 300px; /* distância do menu lateral */
-  margin-right: 10px;
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
   padding: 24px;
   background-color: transparent;
   min-height: calc(100vh - 64px);
@@ -28,14 +29,14 @@ po-page-default {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 /* ===== WIDGET ===== */
 .widget-relatorios {
   border-radius: 12px !important;
   box-shadow: 0 4px 10px rgba(0, 107, 78, 0.15);
-  border: 1px solid rgba(0, 107, 78, 0.1);
+  border: none !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -49,6 +50,7 @@ po-page-default {
   color: #006B4E;
   font-size: 1.2rem;
   font-weight: 600;
+  text-align: center;
 }
 
 p {
@@ -60,17 +62,15 @@ p {
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
   .relatorios-container {
-    margin-left: 220px;
+    width: 90%;
   }
 }
 
 @media (max-width: 768px) {
   .relatorios-container {
-    margin-left: 0;
-    margin-right: 0;
+    width: 95%;
     padding: 16px;
   }
-
   .cabecalho-relatorios {
     justify-content: center;
   }

@@ -1,14 +1,38 @@
-/* Importação do tema PO-UI */
 @import '@po-ui/style/css/po-theme-default.min.css';
 
-/* Estilos globais */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* === Sobrescrita global das variáveis do tema === */
+:root {
+  --color-primary: #057e56 !important;
+  --color-action: #057e56 !important;
+  --color-focus: #00a87d !important;
+  --color-hover: #045b3f !important;
+  --color-highlight: #00a87d !important;
+  --color-link: #057e56 !important;
+  --color-success: #00a87d !important;
+  --color-warning: #f9a825 !important;
+  --color-danger: #d32f2f !important;
+  --color-neutral: #f5f5f5 !important;
+  --color-text: #ffffff !important;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
+/* === Forçar ícones e labels brancos === */
+::ng-deep po-menu .po-icon,
+::ng-deep po-menu .po-menu-item-label {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* === Fundo do menu === */
+::ng-deep po-menu,
+::ng-deep po-menu .po-menu-container {
+  background-color: var(--color-primary) !important;
+}
+
+/* === Hover e ativo === */
+::ng-deep po-menu .po-menu-item:hover {
+  background-color: var(--color-hover) !important;
+}
+::ng-deep po-menu .po-menu-item-active {
+  background-color: var(--color-hover) !important;
+  border-left: 4px solid var(--color-focus) !important;
 }
