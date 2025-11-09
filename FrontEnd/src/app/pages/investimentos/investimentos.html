@@ -1,8 +1,20 @@
-<po-page-default [p-title]="title">
-  <div class="po-row">
-    <div class="po-md-12">
-      <po-button p-label="Novo Investimento" p-kind="primary" class="po-mb-2"></po-button>
-      <p class="po-text-center po-mt-4">Nenhum investimento cadastrado. Clique em "Novo Investimento" para adicionar.</p>
+  <div class="investimentos-container">
+    <div class="po-row cabecalho-investimentos">
+      <div class="po-md-12 po-text-left po-mb-3">
+        <po-button 
+          p-label="Novo Investimento" 
+          p-kind="primary" 
+          icon="po-icon-plus"
+          class="botao-novo-investimento">
+        </po-button>
+      </div>
+    </div>
+
+    <div class="po-row">
+      <div class="po-md-12 po-text-center">
+        <p class="mensagem-vazia">
+          Nenhum investimento cadastrado. Clique em <strong>"Novo Investimento"</strong> para adicionar.
+        </p>
+      </div>
     </div>
   </div>
-</po-page-default>

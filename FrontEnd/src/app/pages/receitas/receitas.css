@@ -1,0 +1,78 @@
+/* ===== Layout base NexFinance ===== */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+po-page-default {
+  background-color: #F3F5F4 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== CONTAINER ===== */
+.receitas-container {
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
+  padding: 24px;
+  background-color: transparent;
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho-receitas {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* ===== BOTÃO ===== */
+.botao-nova-receita {
+  border-radius: 8px !important;
+  background-color: #006B4E !important;
+  color: #fff !important;
+  font-weight: 600;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 107, 78, 0.2);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.botao-nova-receita:hover:not([disabled]) {
+  background-color: #009E70 !important;
+  transform: translateY(-2px);
+}
+
+/* ===== TEXTO ===== */
+.mensagem-vazia {
+  color: #444;
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.mensagem-vazia strong {
+  color: #006B4E;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .receitas-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .receitas-container {
+    width: 95%;
+    padding: 16px;
+  }
+  .cabecalho-receitas {
+    justify-content: center;
+  }
+}

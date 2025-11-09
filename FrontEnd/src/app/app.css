@@ -1,3 +1,5 @@
+
+
 /* === Layout base NexFinance === */
 
 .layout-container {
@@ -42,7 +44,7 @@
   flex: 1;
   margin-left: 260px; /* mesma largura do menu */
   padding: 24px;
-  background-color: #F3F5F4;
+  background-color: #ffffff;
   min-height: calc(100vh - 64px);
   overflow-y: auto;
   transition: background-color 0.3s ease;
@@ -108,4 +110,102 @@ po-toolbar .po-toolbar-title {
   .content-area {
     margin-left: 200px;
   }
+}
+
+/* ====== MENU LATERAL PO-UI — TEMA NEXFINANCE ====== */
+
+/* Fundo verde e texto branco */
+::ng-deep po-menu,
+::ng-deep po-menu .po-menu-container,
+::ng-deep po-menu .po-menu-header {
+  background-color: #006B4E !important; /* verde principal */
+  color: #ffffff !important;
+  border-right: none !important;
+}
+
+/* Ícones e labels brancos (corrigindo o roxo) */
+::ng-deep po-menu .po-menu-item .po-icon,
+::ng-deep po-menu .po-menu-item .po-menu-item-label {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Força branco mesmo se o PO-UI aplicar inline */
+::ng-deep po-menu .po-menu-item span,
+::ng-deep po-menu .po-menu-item svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Base do item */
+::ng-deep po-menu .po-menu-item {
+  background-color: #006B4E !important; /* fundo padrão do menu */
+  color: #ffffff !important;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+/* Corrige o branco intermitente do PO-UI */
+::ng-deep po-menu .po-menu-item:active,
+::ng-deep po-menu .po-menu-item:focus,
+::ng-deep po-menu .po-menu-item:visited {
+  background-color: #00835E !important; /* mantém verde ao clicar */
+  color: #ffffff !important;
+}
+
+/* ====== ITEM ATIVO E HOVER (AJUSTADO PARA MESMO VERDE) ====== */
+
+/* Item ativo (selecionado) */
+::ng-deep po-menu .po-menu-item-active {
+  background-color: #00835E !important; /* mesmo verde do hover */
+  border-left: 4px solid #00B37E !important; /* verde destaque */
+  color: #ffffff !important;
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+/* Garante ícone e label brancos */
+::ng-deep po-menu .po-menu-item-active .po-menu-item-label,
+::ng-deep po-menu .po-menu-item-active .po-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+/* Hover */
+::ng-deep po-menu .po-menu-item:hover {
+  background-color: #00835E !important; /* verde médio */
+  transform: translateX(2px);
+  transition: all 0.2s ease;
+}
+
+/* Corrige o foco visual (sem ficar branco) */
+::ng-deep po-menu .po-menu-item:focus {
+  background-color: #00835E !important;
+  color: #ffffff !important;
+}
+
+/* Ajuste da toolbar */
+::ng-deep po-toolbar {
+  background-color: #006B4E !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Corrigir o fundo do conteúdo */
+.content-area {
+  background-color: #ffffff !important;
+}
+
+/* Botões verdes */
+::ng-deep .po-button {
+  background-color: #009E70 !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  font-weight: 600;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+::ng-deep .po-button:hover:not([disabled]) {
+  background-color: #006B4E !important;
+  transform: translateY(-2px);
 }

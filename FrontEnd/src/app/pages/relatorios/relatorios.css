@@ -1,0 +1,77 @@
+/* ===== Layout base NexFinance ===== */
+:host {
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+po-page-default {
+  background-color: #F3F5F4 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ===== CONTAINER ===== */
+.relatorios-container {
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1200px;
+  padding: 24px;
+  background-color: transparent;
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho-relatorios {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+/* ===== WIDGET ===== */
+.widget-relatorios {
+  border-radius: 12px !important;
+  box-shadow: 0 4px 10px rgba(0, 107, 78, 0.15);
+  border: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.widget-relatorios:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 107, 78, 0.25);
+}
+
+/* ===== TEXTO ===== */
+.mensagem-vazia {
+  color: #006B4E;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+p {
+  color: #444;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 1024px) {
+  .relatorios-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .relatorios-container {
+    width: 95%;
+    padding: 16px;
+  }
+  .cabecalho-relatorios {
+    justify-content: center;
+  }
+}

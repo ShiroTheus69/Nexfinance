@@ -1,29 +1,33 @@
 import { Component } from '@angular/core';
-import { PoTemplatesModule } from '@po-ui/ng-templates';
+import { PoButtonModule, PoFieldModule } from '@po-ui/ng-components';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
-    PoTemplatesModule,
+    PoButtonModule,
+    PoFieldModule,
+    FormsModule,
     RouterLink
   ],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
 export class LoginComponent {
-  readonly logo = 'assets/logo-nf.png';
+  cpf: string = '';
+  senha: string = '';
+  lembrar: boolean = false;
 
-  readonly secondaryAction = {
-    label: 'Criar Conta',
-    action: () => {
-      console.log('Clique em Criar Conta');
-    }
-  };
+  login() {
+    const dadosLogin = {
+      cpf: this.cpf,
+      senha: this.senha,
+      lembrar: this.lembrar
+    };
 
-  login(formData: any) {
-    console.log('Dados de Login:', formData);
+    console.log('Dados de Login:', dadosLogin);
     alert('Login simulado. Implementar lógica de autenticação.');
   }
 }
