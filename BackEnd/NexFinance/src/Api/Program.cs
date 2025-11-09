@@ -1,27 +1,55 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
-using NexFinance.Api.Data;
+using NexFinance.src.Api.Data;
+using NexFinance.src.Application.Interfaces;
+using NexFinance.src.Application.Interfaces.Repositories;
+using NexFinance.src.Application.Mapping;
+using NexFinance.src.Application.Services;
+using NexFinance.src.Infrastructure.Repositories;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Kestrel: escuta todas as interfaces
+// Kestrel: define portas
 builder.WebHost.ConfigureKestrel(options => {
-    options.ListenAnyIP(5163); // HTTP
-    options.ListenAnyIP(7075, listenOptions => listenOptions.UseHttps()); // HTTPS
+    options.ListenAnyIP(5165); // HTTP
 });
 
-// DbContext PostgreSQL
+// DbContext com PostgreSQL
 builder.Services.AddDbContext<NexFinanceContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    )
+);
+
+
+// AutoMapper
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 // Controllers e Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// CORS Angular
+// Repositories (assumindo implementações já criadas)
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<IContaRepository, ContaRepository>();
+builder.Services.AddScoped<ILancamentoRepository, LancamentoRepository>();
+builder.Services.AddScoped<ITransferenciaRepository, TransferenciaRepository>();
+
+// Services
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IContaService, ContaService>();
+builder.Services.AddScoped<ILancamentoService, LancamentoService>();
+builder.Services.AddScoped<ITransferenciaService, TransferenciaService>();
+
+// CORS para Angular
 builder.Services.AddCors(options => {
     options.AddPolicy("AllowAngularApp", policy =>
-        policy.WithOrigins("http://localhost:4200")
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
               .AllowAnyMethod());
 });
@@ -35,7 +63,7 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseCors("AllowAngularApp");
-app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
+
 app.Run();

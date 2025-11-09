@@ -2,11 +2,26 @@
 
 namespace NexFinance.Domain.Entities {
     public class Categoria {
-        public int Id { get; set; }
-        public string Nome { get; set; } = string.Empty;
-        public TipoCategoria Tipo { get; set; } // ENTRADA ou SAIDA
-        public string? Descricao { get; set; }
+        public int Id { get; private set; }
+        public string Nome { get; private set; } = string.Empty;
+        public TipoMovimento Tipo { get; private set; }
+        public string? Descricao { get; private set; }
 
-        public ICollection<Lancamento>? Lancamentos { get; set; }
+        private readonly List<Lancamento> _lancamentos = new();
+        public IReadOnlyCollection<Lancamento> Lancamentos => _lancamentos.AsReadOnly();
+
+        protected Categoria() { }
+
+        public Categoria(string nome, TipoMovimento tipo, string? descricao) {
+            SetNome(nome);
+            Tipo = tipo;
+            Descricao = descricao;
+        }
+
+        public void SetNome(string nome) {
+            if (string.IsNullOrWhiteSpace(nome))
+                throw new ArgumentException("Nome da categoria inválido.");
+            Nome = nome.Trim();
+        }
     }
 }

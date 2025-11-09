@@ -1,30 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using NexFinance.Domain.Entities;
-using NexFinance.Infrastructure.Context;
+using NexFinance.src.Application.DTOs;
+using NexFinance.src.Application.Interfaces;
 
 namespace NexFinance.Api.Controllers {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/lancamentos")]
     public class LancamentoController : ControllerBase {
-        private readonly NexFinanceDbContext _context;
-        public LancamentoController(NexFinanceDbContext context) => _context = context;
+        private readonly ILancamentoService _service;
+        public LancamentoController(ILancamentoService service) => _service = service;
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll() {
-            var lancamentos = await _context.Lancamentos
-                .Include(l => l.Usuario)
-                .Include(l => l.Categoria)
-                .Include(l => l.Conta)
-                .ToListAsync();
-            return Ok(lancamentos);
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> Get(int id, CancellationToken ct) {
+            var dto = await _service.GetByIdAsync(id, ct);
+            return dto == null ? NotFound() : Ok(dto);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Lancamento lancamento) {
-            _context.Lancamentos.Add(lancamento);
-            await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetAll), new { id = lancamento.Id }, lancamento);
+        public async Task<IActionResult> Create([FromBody] CreateLancamentoDto dto, CancellationToken ct) {
+            var created = await _service.CreateAsync(dto, ct);
+            return CreatedAtAction(nameof(Get), new { id = created.Id }, created);
+        }
+
+        [HttpGet("usuario/{usuarioId:int}")]
+        public async Task<IActionResult> GetByUsuario(int usuarioId, int page = 1, int pageSize = 20, CancellationToken ct = default) {
+            var (items, total) = await _service.GetByUsuarioPagedAsync(usuarioId, page, pageSize, ct);
+            return Ok(new { items, total });
         }
     }
 }
