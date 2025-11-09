@@ -1,15 +1,21 @@
 <div *ngIf="showMenu">
   <po-toolbar [p-title]="title"></po-toolbar>
 
-  <po-menu
-    [p-menus]="[
-      { label: 'Dashboard', link: '/dashboard', icon: 'po-icon-home' },
-      { label: 'Receitas', link: '/receitas', icon: 'po-icon-plus' },
-      { label: 'Despesas', link: '/despesas', icon: 'po-icon-minus' },
-      { label: 'Investimentos', link: '/investimentos', icon: 'po-icon-finance' },
-      { label: 'Relatórios', link: '/relatorios', icon: 'po-icon-chart-area' }
-    ]">
-  </po-menu>
+  <div class="layout-container">
+    <po-menu
+      [p-menus]="[
+        { label: 'Dashboard', link: '/dashboard', icon: 'po-icon-home' },
+        { label: 'Receitas', link: '/receitas', icon: 'po-icon-plus' },
+        { label: 'Despesas', link: '/despesas', icon: 'po-icon-minus' },
+        { label: 'Investimentos', link: '/investimentos', icon: 'po-icon-finance' },
+        { label: 'Relatórios', link: '/relatorios', icon: 'po-icon-chart-area' }
+      ]">
+    </po-menu>
+
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet *ngIf="!showMenu"></router-outlet>

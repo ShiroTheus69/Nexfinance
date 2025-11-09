@@ -20,6 +20,7 @@ export class CadastroComponent {
   nome: string = '';
   email: string = '';
   senha: string = '';
+  cpf: string = '';
   confirmarSenha: string = '';
 
   cadastrar() {
@@ -30,6 +31,7 @@ export class CadastroComponent {
     const formData = {
       nome: this.nome,
       email: this.email,
+      cpf: this.cpf,
       senha: this.senha
     };
     console.log('Dados de Cadastro:', formData);
