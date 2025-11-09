@@ -1,40 +1,43 @@
-  <div class="dashboard-container">
+<div class="dashboard-container">
+  <div class="po-row">
+    <po-widget class="po-md-4" p-title="Saldo Total" [p-height]="150">
+      <div class="po-text-center dashboard-value destaque">
+        R$ {{ saldoTotal | number:'1.2-2' }}
+      </div>
+      <div class="po-text-center">Saldo disponível</div>
+    </po-widget>
 
-    <div class="po-row">
-      <po-widget class="po-md-4" p-title="Saldo Total" [p-height]="150">
-        <div class="po-text-center dashboard-value destaque">
-          R$ 0,00
-        </div>
-        <div class="po-text-center">Saldo disponível</div>
-      </po-widget>
+    <po-widget class="po-md-4" p-title="Receitas do Mês" [p-height]="150">
+      <div class="po-text-center dashboard-value receitas">
+        R$ {{ receitasMes | number:'1.2-2' }}
+      </div>
+      <div class="po-text-center">Total de receitas</div>
+    </po-widget>
 
-      <po-widget class="po-md-4" p-title="Receitas do Mês" [p-height]="150">
-        <div class="po-text-center dashboard-value receitas">
-          R$ 0,00
-        </div>
-        <div class="po-text-center">Total de receitas</div>
-      </po-widget>
-
-      <po-widget class="po-md-4" p-title="Despesas do Mês" [p-height]="150">
-        <div class="po-text-center dashboard-value despesas">
-          R$ 0,00
-        </div>
-        <div class="po-text-center">Total de despesas</div>
-      </po-widget>
-    </div>
-
-    <div class="po-row po-mt-2">
-      <po-widget class="po-md-6" p-title="Últimas Transações" [p-height]="300">
-        <div class="po-text-center po-mt-4">
-          <p>Nenhuma transação registrada</p>
-        </div>
-      </po-widget>
-
-      <po-widget class="po-md-6" p-title="Investimentos" [p-height]="300">
-        <div class="po-text-center po-mt-4">
-          <p>Nenhum investimento cadastrado</p>
-        </div>
-      </po-widget>
-    </div>
-
+    <po-widget class="po-md-4" p-title="Despesas do Mês" [p-height]="150">
+      <div class="po-text-center dashboard-value despesas">
+        R$ {{ despesasMes | number:'1.2-2' }}
+      </div>
+      <div class="po-text-center">Total de despesas</div>
+    </po-widget>
   </div>
+
+  <div class="po-row po-mt-2">
+    <po-widget class="po-md-6" p-title="Últimas Transações" [p-height]="300">
+      <div class="po-text-center po-mt-4" *ngIf="!ultimasTransacoes.length">
+        <p>Nenhuma transação registrada</p>
+      </div>
+      <ul *ngIf="ultimasTransacoes.length">
+        <li *ngFor="let transacao of ultimasTransacoes">
+          {{ transacao.descricao }} — R$ {{ transacao.valor | number:'1.2-2' }}
+        </li>
+      </ul>
+    </po-widget>
+
+    <po-widget class="po-md-6" p-title="Investimentos" [p-height]="300">
+      <div class="po-text-center po-mt-4">
+        <p>Nenhum investimento cadastrado</p>
+      </div>
+    </po-widget>
+  </div>
+</div>
