@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NexFinance.Domain.Entities;
+using NexFinance.Domain.Enums;
 
 namespace NexFinance.src.Api.Data {
     public class NexFinanceContext : DbContext {
@@ -61,7 +62,8 @@ namespace NexFinance.src.Api.Data {
             modelBuilder.Entity<Categoria>(entity => {
                 entity.ToTable("categoria");
 
-                entity.HasKey(e => e.Id);
+                entity.HasKey(e => e.Id).HasName("id");
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Nome)
                       .HasColumnName("nome")
@@ -69,9 +71,13 @@ namespace NexFinance.src.Api.Data {
                       .HasMaxLength(100);
 
                 entity.Property(e => e.Tipo)
-                      .HasColumnName("tipo")
-                      .IsRequired()
-                      .HasMaxLength(10);
+                  .HasColumnName("tipo")
+                  .HasConversion(
+                      v => v.ToString(),
+                      v => Enum.Parse<TipoMovimento>(v)
+                  )
+                  .HasMaxLength(10)
+                  .IsRequired();
 
                 entity.Property(e => e.Descricao)
                       .HasColumnName("descricao");
@@ -84,6 +90,7 @@ namespace NexFinance.src.Api.Data {
                 entity.ToTable("conta");
 
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.Nome)
                       .HasColumnName("nome")
@@ -112,6 +119,7 @@ namespace NexFinance.src.Api.Data {
                 entity.ToTable("lancamento");
 
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.UsuarioId)
                       .HasColumnName("usuario_id")
@@ -169,6 +177,7 @@ namespace NexFinance.src.Api.Data {
                 entity.ToTable("transferencia");
 
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("id");
 
                 entity.Property(e => e.UsuarioId)
                       .HasColumnName("usuario_id")

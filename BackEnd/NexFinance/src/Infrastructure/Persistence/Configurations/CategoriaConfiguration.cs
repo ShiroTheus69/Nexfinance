@@ -10,17 +10,22 @@ namespace NexFinance.src.Infrastructure.Persistence.Configurations {
 
             builder.HasKey(c => c.Id);
 
+            builder.Property(c => c.Id).HasColumnName("id");
+
             builder.Property(c => c.Nome)
-                .IsRequired()
-                .HasMaxLength(100);
+                   .IsRequired()
+                   .HasMaxLength(100)
+                   .HasColumnName("nome");
 
             builder.Property(c => c.Tipo)
-                .HasConversion<string>()
-                .IsRequired()
-                .HasMaxLength(10);
+                   .HasConversion<string>()
+                   .IsRequired()
+                   .HasMaxLength(10)
+                   .HasColumnName("tipo");
 
             builder.Property(c => c.Descricao)
-                .HasColumnType("text");
+                   .HasColumnType("text")
+                   .HasColumnName("descricao");
         }
     }
 }

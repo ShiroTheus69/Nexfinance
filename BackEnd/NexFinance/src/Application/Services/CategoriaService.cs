@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
-using NexFinance.src.Application.DTOs;
 using NexFinance.Domain.Entities;
+using NexFinance.Domain.Enums;
+using NexFinance.src.Application.DTOs;
 using NexFinance.src.Application.Interfaces;
 using NexFinance.src.Application.Interfaces.Repositories;
+using NexFinance.src.Infrastructure.Repositories;
 
 namespace NexFinance.src.Application.Services {
    
@@ -16,17 +18,18 @@ namespace NexFinance.src.Application.Services {
             _mapper = mapper;
         }
 
-        public async Task<CategoriaDto> CreateAsync(CreateCategoriaDto dto, CancellationToken ct = default) {
-            if (string.IsNullOrWhiteSpace(dto.Nome))
-                throw new ArgumentException("Nome inválido");
-            if (!Enum.TryParse<Domain.Enums.TipoMovimento>(dto.Tipo, true, out var tipo))
-                throw new ArgumentException("Tipo inválido");
+        public async Task<CategoriaDto> CreateAsync(CreateCategoriaDto dto, CancellationToken ct) {
+            // Converte string do DTO para enum com validação
+            var tipo = dto.ToTipoMovimento();
 
-            var entity = new Categoria(dto.Nome.Trim(), tipo, dto.Descricao?.Trim());
-            var created = await _repo.AddAsync(entity, ct);
-            return _mapper.Map<CategoriaDto>(created);
+            var categoria = new Categoria(dto.Nome, tipo, dto.Descricao);
+
+            // Persiste no banco
+            await _repo.AddAsync(categoria, ct);
+
+            // Retorna DTO de leitura
+            return new CategoriaDto(categoria.Id, categoria.Nome, categoria.Tipo.ToString(), categoria.Descricao);
         }
-
         public async Task<CategoriaDto?> GetByIdAsync(int id, CancellationToken ct = default) {
             var c = await _repo.GetByIdAsync(id, ct);
             return c == null ? null : _mapper.Map<CategoriaDto>(c);

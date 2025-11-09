@@ -7,7 +7,7 @@ namespace NexFinance.Domain.Entities {
         public string Nome { get; private set; } = string.Empty;
         public string Cpf { get; private set; } = string.Empty;
         public string Email { get; private set; } = string.Empty;
-        public string SenhaHash { get; private set; } = string.Empty;
+        public byte[] SenhaHash { get; private set; } = Array.Empty<byte>();
         public int? Idade { get; private set; }
         public DateTime DtCriacao { get; private set; } = DateTime.UtcNow;
 
@@ -22,7 +22,7 @@ namespace NexFinance.Domain.Entities {
 
         protected Usuario() { }
 
-        public Usuario(string nome, string cpf, string email, string senhaHash, int? idade) {
+        public Usuario(string nome, string cpf, string email, byte[] senhaHash, int? idade) {
             SetNome(nome);
             SetCpf(cpf);
             SetEmail(email);
@@ -43,13 +43,13 @@ namespace NexFinance.Domain.Entities {
         }
 
         public void SetEmail(string email) {
-            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@") || !email.Contains(".com"))
+            if (string.IsNullOrWhiteSpace(email) || !email.Contains("@"))
                 throw new ArgumentException("E-mail inválido.");
             Email = email.Trim().ToLowerInvariant();
         }
 
-        public void SetSenha(string senhaHash) {
-            if (string.IsNullOrWhiteSpace(senhaHash))
+        public void SetSenha(byte[] senhaHash) {
+            if (senhaHash == null || senhaHash.Length == 0)
                 throw new ArgumentException("Senha inválida.");
             SenhaHash = senhaHash;
         }

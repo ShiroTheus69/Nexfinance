@@ -122,3 +122,5 @@ C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\refint\NexFinance.
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\NexFinance.pdb
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\NexFinance.genruntimeconfig.cache
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\ref\NexFinance.dll
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BouncyCastle.Crypto.dll

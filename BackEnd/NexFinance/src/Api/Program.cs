@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Kestrel: define portas
 builder.WebHost.ConfigureKestrel(options => {
-    options.ListenAnyIP(5165); // HTTP
+    options.ListenAnyIP(5163); // HTTP
 });
 
 // DbContext com PostgreSQL
