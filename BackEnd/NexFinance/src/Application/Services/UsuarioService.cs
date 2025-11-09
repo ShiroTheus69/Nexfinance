@@ -4,6 +4,8 @@ using NexFinance.src.Application.DTOs;
 using NexFinance.src.Application.Interfaces;
 using NexFinance.src.Application.Interfaces.Repositories;
 using NexFinance.src.Application.Security;
+using Org.BouncyCastle.Crypto.Generators;
+using BCrypt.Net;
 namespace NexFinance.src.Application.Services {
     
 
@@ -32,9 +34,10 @@ namespace NexFinance.src.Application.Services {
             if (exist != null)
                 throw new InvalidOperationException("Email já cadastrado");
 
-            var hashed = PasswordHasher.Hash(dto.SenhaPlain);
+            var hashed = BCrypt.Net.BCrypt.HashPassword(dto.SenhaPlain);
+            var hashedBytes = System.Text.Encoding.UTF8.GetBytes(hashed);
 
-            var usuario = new Usuario(dto.Nome.Trim(), dto.Cpf.Trim(), dto.Email.Trim().ToLowerInvariant(), hashed, dto.Idade);
+            var usuario = new Usuario(dto.Nome.Trim(), dto.Cpf.Trim(), dto.Email.Trim().ToLowerInvariant(), hashedBytes, dto.Idade);
 
             var created = await _repo.AddAsync(usuario, ct);
             // mapear para DTO de resposta
