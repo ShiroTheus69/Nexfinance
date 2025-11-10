@@ -10,11 +10,5 @@ namespace NexFinance.src.Application.DTOs {
         [Required(ErrorMessage = "A senha é obrigatória.")]
         [StringLength(100, MinimumLength = 8, ErrorMessage = "A senha deve ter entre 8 e 100 caracteres.")]
         public string Senha { get; set; } = string.Empty;
-
-        [StringLength(50)]
-        public string? Dispositivo { get; set; }
-
-        [StringLength(50)]
-        public string? Ip { get; set; }  
     }
 }

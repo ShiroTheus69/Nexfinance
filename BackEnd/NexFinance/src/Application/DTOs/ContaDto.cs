@@ -1,8 +1,20 @@
 ﻿namespace NexFinance.src.Application.DTOs {
-    public record ContaDto(int Id, string Nome, string Tipo, int IdUsuario);
+    public class ContaDto {
+        public int Id { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public string Tipo { get; set; } = string.Empty;
+        public int IdUsuario { get; set; }
+    }
 
-    public record CreateContaDto(string Nome, string Tipo, int IdUsuario);
+    public class CreateContaDto {
+        public string Nome { get; set; } = string.Empty;
+        public string Tipo { get; set; } = string.Empty;
+        public int IdUsuario { get; set; }
+    }
 
-    public record UpdateContaDto(string Nome, string Tipo, int IdUsuario);
-
+    public class UpdateContaDto {
+        public string Nome { get; set; } = string.Empty;
+        public string Tipo { get; set; } = string.Empty;
+        public int IdUsuario { get; set; }
+    }
 }

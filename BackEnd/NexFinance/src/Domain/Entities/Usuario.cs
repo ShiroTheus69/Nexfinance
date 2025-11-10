@@ -7,7 +7,7 @@ namespace NexFinance.Domain.Entities {
         public string Nome { get; private set; } = string.Empty;
         public string Cpf { get; private set; } = string.Empty;
         public string Email { get; private set; } = string.Empty;
-        public byte[] SenhaHash { get; private set; } = Array.Empty<byte>();
+        public string SenhaHash { get; private set; } = string.Empty;
         public int? Idade { get; private set; }
         public DateTime DtCriacao { get; private set; } = DateTime.UtcNow;
 
@@ -22,11 +22,14 @@ namespace NexFinance.Domain.Entities {
 
         protected Usuario() { }
 
-        public Usuario(string nome, string cpf, string email, byte[] senhaHash, int? idade) {
+        public Usuario(string nome, string cpf, string email, string senha, int? idade, bool isHash) {
             SetNome(nome);
             SetCpf(cpf);
             SetEmail(email);
-            SetSenha(senhaHash);
+            if (isHash)
+                SenhaHash = senha;
+            else
+                SetSenhaHash(senha);
             Idade = idade;
         }
 
@@ -51,7 +54,7 @@ namespace NexFinance.Domain.Entities {
         private void SetSenhaHash(string senha) {
             if (string.IsNullOrWhiteSpace(senha))
                 throw new ArgumentException("Senha inválida.");
-            SenhaHash = BCrypt.Net.BCrypt.HashPassword(senha);
+            
         }
         public bool VerificarSenha(string senhaPlain) => BCrypt.Net.BCrypt.Verify(senhaPlain, SenhaHash);
     }
