@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Workstation\\NexFinance\\BackEnd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\src\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|solutionrelative:nexfinance\\src\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\src\\application\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|solutionrelative:nexfinance\\src\\application\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -81,10 +85,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\nexfinance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|solutionrelative:nexfinance\\nexfinance.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\src\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|solutionrelative:nexfinance\\src\\domain\\entities\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{809A6377-8142-4D3C-ADF9-2EDCB0A2A32D}|NexFinance\\NexFinance.csproj|c:\\workstation\\nexfinance\\backend\\nexfinance\\src\\domain\\entities\\transferencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -274,19 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "schema.sql ",
-              "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\DataBase\\schema.sql",
-              "RelativeDocumentMoniker": "NexFinance\\DataBase\\schema.sql",
-              "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\DataBase\\schema.sql",
-              "RelativeToolTip": "NexFinance\\DataBase\\schema.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-09T04:02:06.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Program.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\Program.cs",
@@ -299,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ContaRepository.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Repositories\\ContaRepository.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Infrastructure\\Repositories\\ContaRepository.cs",
@@ -312,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ContaConfiguration.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Persistence\\Configurations\\ContaConfiguration.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Infrastructure\\Persistence\\Configurations\\ContaConfiguration.cs",
@@ -325,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "NexFinanceContext.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Data\\NexFinanceContext.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\Data\\NexFinanceContext.cs",
@@ -338,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\Docker\\Dockerfile",
               "RelativeDocumentMoniker": "NexFinance\\Docker\\Dockerfile",
@@ -351,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "LancamentoController.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Controllers\\LancamentoController.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\Controllers\\LancamentoController.cs",
@@ -363,7 +351,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ContaController.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Controllers\\ContaController.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\Controllers\\ContaController.cs",
@@ -376,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "NexFinance.http",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\NexFinance.http",
               "RelativeDocumentMoniker": "NexFinance\\NexFinance.http",
@@ -388,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ContaService.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Application\\Services\\ContaService.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Application\\Services\\ContaService.cs",
@@ -401,46 +389,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "UsuarioController.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Controllers\\UsuarioController.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "NexFinance\\src\\Api\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-07T23:22:00.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UsuarioDto.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Application\\DTOs\\UsuarioDto.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Application\\DTOs\\UsuarioDto.cs",
               "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Application\\DTOs\\UsuarioDto.cs",
               "RelativeToolTip": "NexFinance\\src\\Application\\DTOs\\UsuarioDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-08T23:34:07.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "UsuarioService.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Application\\Services\\UsuarioService.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Application\\Services\\UsuarioService.cs",
               "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Application\\Services\\UsuarioService.cs",
               "RelativeToolTip": "NexFinance\\src\\Application\\Services\\UsuarioService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwCcAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T00:31:27.313Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Domain\\Entities\\Usuario.cs",
+              "RelativeDocumentMoniker": "NexFinance\\src\\Domain\\Entities\\Usuario.cs",
+              "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Domain\\Entities\\Usuario.cs",
+              "RelativeToolTip": "NexFinance\\src\\Domain\\Entities\\Usuario.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAYwDIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T22:13:41.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "schema.sql ",
+              "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\DataBase\\schema.sql",
+              "RelativeDocumentMoniker": "NexFinance\\DataBase\\schema.sql",
+              "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\DataBase\\schema.sql",
+              "RelativeToolTip": "NexFinance\\DataBase\\schema.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-11-09T04:02:06.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\appsettings.json",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\appsettings.json",
@@ -453,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "NexFinance\\src\\Api\\appsettings.Development.json",
@@ -465,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\Docker\\docker-compose.yml",
               "RelativeDocumentMoniker": "NexFinance\\Docker\\docker-compose.yml",
@@ -478,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "NexFinance\\Properties\\launchSettings.json",
@@ -491,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "CategoriaRepository.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Repositories\\CategoriaRepository.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Infrastructure\\Repositories\\CategoriaRepository.cs",
@@ -503,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "EfRepository.cs",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Infrastructure\\Repositories\\EfRepository.cs",
               "RelativeDocumentMoniker": "NexFinance\\src\\Infrastructure\\Repositories\\EfRepository.cs",
@@ -524,18 +537,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-08T22:11:01.416Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Domain\\Entities\\Usuario.cs",
-              "RelativeDocumentMoniker": "NexFinance\\src\\Domain\\Entities\\Usuario.cs",
-              "ToolTip": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\src\\Domain\\Entities\\Usuario.cs",
-              "RelativeToolTip": "NexFinance\\src\\Domain\\Entities\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T22:13:41.993Z"
             },
             {
               "$type": "Document",
@@ -587,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "NexFinance.csproj",
               "DocumentMoniker": "C:\\Workstation\\NexFinance\\BackEnd\\NexFinance\\NexFinance.csproj",
               "RelativeDocumentMoniker": "NexFinance\\NexFinance.csproj",

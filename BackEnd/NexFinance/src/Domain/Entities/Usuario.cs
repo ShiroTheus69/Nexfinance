@@ -48,10 +48,11 @@ namespace NexFinance.Domain.Entities {
             Email = email.Trim().ToLowerInvariant();
         }
 
-        public void SetSenha(byte[] senhaHash) {
-            if (senhaHash == null || senhaHash.Length == 0)
+        private void SetSenhaHash(string senha) {
+            if (string.IsNullOrWhiteSpace(senha))
                 throw new ArgumentException("Senha inválida.");
-            SenhaHash = senhaHash;
+            SenhaHash = BCrypt.Net.BCrypt.HashPassword(senha);
         }
+        public bool VerificarSenha(string senhaPlain) => BCrypt.Net.BCrypt.Verify(senhaPlain, SenhaHash);
     }
 }
