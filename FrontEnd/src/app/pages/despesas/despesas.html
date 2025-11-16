@@ -1,20 +1,76 @@
-  <div class="despesas-container">
-    <div class="po-row cabecalho-despesas">
-      <div class="po-md-12 po-text-left po-mb-3">
-        <po-button 
-          p-label="Nova Despesa" 
-          p-kind="primary" 
-          icon="po-icon-plus"
-          class="botao-nova-despesa">
-        </po-button>
-      </div>
-    </div>
+<div class="despesas-container">
 
-    <div class="po-row">
-      <div class="po-md-12 po-text-center">
-        <p class="mensagem-vazia">
-          Nenhuma despesa cadastrada. Clique em <strong>"Nova Despesa"</strong> para adicionar.
-        </p>
-      </div>
+  <div class="po-row cabecalho-despesas">
+    <div class="po-md-12 po-text-left po-mb-3">
+      <po-button
+        p-label="Nova Despesa"
+        p-kind="primary"
+        icon="po-icon-plus"
+        (p-click)="abrirModal()">
+      </po-button>
     </div>
   </div>
+
+  <div class="po-row">
+    <div class="po-md-12 po-text-center">
+      <p class="mensagem-vazia">
+        Nenhuma despesa cadastrada. Clique em <strong>"Nova Despesa"</strong> para adicionar.
+      </p>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <po-modal #modalNovaDespesa p-title="Cadastrar Nova Despesa">
+    <form #formDespesa="ngForm" (ngSubmit)="salvarDespesa()">
+
+      <po-input
+        name="descricao"
+        p-label="Descrição"
+        [(ngModel)]="novaDespesa.descricao"
+        p-placeholder="Ex: Conta de luz"
+        required>
+      </po-input>
+
+      <po-number
+        name="valor"
+        p-label="Valor (R$)"
+        [(ngModel)]="novaDespesa.valor"
+        required>
+      </po-number>
+
+      <po-datepicker
+        name="data"
+        p-label="Data da despesa"
+        [(ngModel)]="novaDespesa.data"
+        required>
+      </po-datepicker>
+
+      <po-select
+        name="categoria"
+        p-label="Categoria"
+        [ngModel]="novaDespesa.categoriaId"
+        ngDefaultControl
+        [p-options]="categorias"
+        required>
+      </po-select>
+
+      <po-modal-footer>
+
+        <po-button
+          p-label="Cancelar"
+          p-kind="danger"
+          (p-click)="fecharModal()">
+        </po-button>
+
+        <po-button
+          p-label="Salvar"
+          p-kind="primary"
+          [p-disabled]="!formDespesa.valid"
+          type="submit">
+        </po-button>
+
+      </po-modal-footer>
+
+    </form>
+  </po-modal>
+</div>
