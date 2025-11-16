@@ -42,5 +42,21 @@ namespace NexFinance.Domain.Entities {
                 throw new ArgumentException("Data inválida.");
             Data = DateTime.SpecifyKind(data, DateTimeKind.Utc);
         }
+
+        public void Atualizar(int categoriaId, int contaId, TipoMovimento tipo,
+                             decimal valor, DateTime data, string descricao) {
+            if (valor <= 0)
+                throw new ArgumentException("O valor deve ser maior que zero.");
+
+            if (data == default)
+                throw new ArgumentException("Data inválida.");
+
+            CategoriaId = categoriaId;
+            ContaId = contaId;
+            Tipo = tipo;
+            Valor = valor;
+            Data = data;
+            Descricao = descricao;
+        }
     }
 }

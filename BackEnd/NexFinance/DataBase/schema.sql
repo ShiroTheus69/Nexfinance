@@ -3,7 +3,7 @@ CREATE TABLE usuario (
 	nome VARCHAR(100) NOT NULL,
 	cpf Varchar(11) NOT NULL,
 	email VARCHAR(100) UNIQUE NOT NULL,
-	senha_hash Bytea NOT NULL,
+	senha_hash VARCHAR(200) NOT NULL,
 	idade INT,
 	dt_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

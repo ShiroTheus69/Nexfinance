@@ -1,0 +1,25 @@
+[33m9859920[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain-pedro[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m9859920[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain-pedro[m[33m)[m HEAD@{1}: commit: Adição da função de autenticação
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: reset: moving to HEAD
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{5}: reset: moving to HEAD
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{6}: reset: moving to 94dde8f318e2ec8d949845dd2af6e5b3eb2cb6bb
+[33m94dde8f[m[33m ([m[1;31morigin/main-pedro[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/branch-skina[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{7}: merge origin/main: Fast-forward
+[33m2555442[m HEAD@{8}: commit: Alterações de funções
+[33md895f1b[m HEAD@{9}: commit: Solução de conflitos
+[33m1aba8eb[m[33m ([m[1;32mmain[m[33m)[m HEAD@{10}: checkout: moving from main to main-pedro
+[33m1aba8eb[m[33m ([m[1;32mmain[m[33m)[m HEAD@{11}: reset: moving to 1aba8ebc2d57eb780cf607770cf1fe420bb4c0bf
+[33m4aa39e4[m HEAD@{12}: checkout: moving from main-Pedro to main
+[33m4aa39e4[m HEAD@{13}: reset: moving to 4aa39e405c14d498ee64bda937cfe031615fa4ad
+[33m4aa39e4[m HEAD@{14}: reset: moving to 4aa39e405c14d498ee64bda937cfe031615fa4ad
+[33mdee6c16[m HEAD@{15}: reset: moving to dee6c164ce5410b0cef1fb7b20896e539d284c49
+[33mdee6c16[m HEAD@{16}: commit: Resolução de conflitos
+[33m1aba8eb[m[33m ([m[1;32mmain[m[33m)[m HEAD@{17}: reset: moving to 1aba8ebc2d57eb780cf607770cf1fe420bb4c0bf
+[33mee9a768[m HEAD@{18}: commit: Aprimoramento de segurança do front
+[33me57ebb6[m HEAD@{19}: checkout: moving from e57ebb6286bcfb88f9c383813426d1acfe676982 to main-Pedro
+[33me57ebb6[m HEAD@{20}: checkout: moving from main-Pedro to e57ebb6286bcfb88f9c383813426d1acfe676982
+[33me57ebb6[m HEAD@{21}: reset: moving to e57ebb6286bcfb88f9c383813426d1acfe676982
+[33me57ebb6[m HEAD@{22}: commit: Subindo alterações do Back
+[33m4aa39e4[m HEAD@{23}: checkout: moving from main to main-Pedro
+[33m4aa39e4[m HEAD@{24}: clone: from https://github.com/ShiroTheus69/Nexfinance.git

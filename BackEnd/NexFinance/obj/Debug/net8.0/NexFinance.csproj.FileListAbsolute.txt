@@ -1,13 +1,3 @@
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.csproj.AssemblyReference.cache
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.GeneratedMSBuildEditorConfig.editorconfig
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.AssemblyInfoInputs.cache
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.AssemblyInfo.cs
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.csproj.CoreCompileInputs.cache
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.MvcApplicationPartsAssemblyInfo.cs
-C:\Workstation\NexFinance\NexFinance\obj\Debug\net8.0\NexFinance.MvcApplicationPartsAssemblyInfo.cache
-C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\src\Api\appsettings.Development.json
-C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\src\Api\appsettings.json
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\NexFinance.staticwebassets.endpoints.json
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\NexFinance.exe
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\NexFinance.deps.json
@@ -16,6 +6,7 @@ C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\NexFinance.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\NexFinance.pdb
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\AutoMapper.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Humanizer.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -36,6 +27,7 @@ C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Microsoft.OpenApi.
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Npgsql.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BouncyCastle.Crypto.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -122,5 +114,5 @@ C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\refint\NexFinance.
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\NexFinance.pdb
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\NexFinance.genruntimeconfig.cache
 C:\Workstation\NexFinance\BackEnd\NexFinance\obj\Debug\net8.0\ref\NexFinance.dll
-C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BCrypt.Net-Next.dll
-C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\appsettings.Development.json
+C:\Workstation\NexFinance\BackEnd\NexFinance\bin\Debug\net8.0\appsettings.json

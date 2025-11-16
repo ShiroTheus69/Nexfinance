@@ -17,7 +17,7 @@
         private readonly List<Transferencia> _transferenciasDestino = new();
         public IReadOnlyCollection<Transferencia> TransferenciasDestino => _transferenciasDestino.AsReadOnly();
 
-        protected Conta() { }
+        public Conta() { }
 
         public Conta(string nome, string tipo, int idUsuario) {
             SetNome(nome);
