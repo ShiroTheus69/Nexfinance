@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
+################################################################################
+
+/BackEnd/.vs/NexFinance/v17/.suo
+/BackEnd/NexFinance/obj/Debug/net8.0/NexFinance.AssemblyInfo.cs
+/BackEnd/NexFinance/obj/Debug/net8.0/NexFinance.AssemblyInfoInputs.cache
+/.gitignore
