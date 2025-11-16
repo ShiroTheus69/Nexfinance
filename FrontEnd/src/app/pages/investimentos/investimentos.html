@@ -1,20 +1,70 @@
-  <div class="investimentos-container">
-    <div class="po-row cabecalho-investimentos">
-      <div class="po-md-12 po-text-left po-mb-3">
-        <po-button 
-          p-label="Novo Investimento" 
-          p-kind="primary" 
-          icon="po-icon-plus"
-          class="botao-novo-investimento">
-        </po-button>
-      </div>
-    </div>
+<div class="investimentos-container">
 
-    <div class="po-row">
-      <div class="po-md-12 po-text-center">
-        <p class="mensagem-vazia">
-          Nenhum investimento cadastrado. Clique em <strong>"Novo Investimento"</strong> para adicionar.
-        </p>
-      </div>
+  <div class="po-row cabecalho-investimentos">
+    <div class="po-md-12 po-text-left po-mb-3">
+      <po-button 
+        p-label="Novo Investimento"
+        p-kind="primary"
+        icon="po-icon-plus"
+        (p-click)="abrirModal()">
+      </po-button>
     </div>
   </div>
+
+  <div class="po-row">
+    <div class="po-md-12 po-text-center" *ngIf="investimentos.length === 0">
+      <p class="mensagem-vazia">
+        Nenhum investimento cadastrado. Clique em <strong>"Novo Investimento"</strong> para adicionar.
+      </p>
+    </div>
+  </div>
+
+  <po-modal #modalNovoInvestimento p-title="Cadastrar Novo Investimento">
+    <form #formInvest="ngForm" (ngSubmit)="salvarInvestimento()">
+
+      <po-input
+        name="descricao"
+        p-label="Descrição"
+        [(ngModel)]="novoInvest.descricao"
+        p-placeholder="Ex: Tesouro Selic"
+        required>
+      </po-input>
+
+      <po-number
+        name="valor"
+        p-label="Valor Investido (R$)"
+        [(ngModel)]="novoInvest.valor"
+        required>
+      </po-number>
+
+      <po-datepicker
+        name="data"
+        p-label="Data do investimento"
+        [(ngModel)]="novoInvest.data"
+        required>
+      </po-datepicker>
+
+      <po-combo
+        name="tipo"
+        p-label="Tipo"
+        [ngModel]="novoInvest.tipo"
+        ngDefaultControl
+        [p-options]="tiposInvestimento"
+        required>
+      </po-combo>
+
+      <po-modal-footer>
+        <po-button p-label="Cancelar" p-kind="danger" (p-click)="fecharModal()"></po-button>
+
+        <po-button 
+          p-label="Salvar" 
+          p-kind="primary" 
+          [p-disabled]="!formInvest.valid" 
+          type="submit">
+        </po-button>
+      </po-modal-footer>
+
+    </form>
+  </po-modal>
+
+</div>
