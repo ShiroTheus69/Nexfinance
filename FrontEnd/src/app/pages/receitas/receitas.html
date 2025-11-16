@@ -1,20 +1,104 @@
-  <div class="receitas-container">
-    <div class="po-row cabecalho-receitas">
-      <div class="po-md-12 po-text-left po-mb-3">
-        <po-button 
-          p-label="Nova Receita" 
-          p-kind="primary" 
-          icon="po-icon-plus"
-          class="botao-nova-receita">
-        </po-button>
-      </div>
-    </div>
+<div class="receitas-container po-p-4">
 
-    <div class="po-row">
-      <div class="po-text-center po-mt-4">
-        <p class="mensagem-vazia">
-          Nenhuma receita cadastrada. Clique em <strong>"Nova Receita"</strong> para adicionar.
-        </p>
-      </div>
+  <!-- Cabeçalho -->
+  <div class="po-row cabecalho-receitas po-mb-3">
+    <div class="po-md-12 po-text-left">
+      <po-button
+        p-label="Nova Receita"
+        p-kind="primary"
+        p-icon="po-icon-plus"
+        (p-click)="openNew()"
+        class="botao-nova-receita">
+      </po-button>
     </div>
   </div>
+
+
+  
+  <!-- Tabela de Receitas -->
+  <po-table
+  [p-items]="items"
+    [p-striped]="true"  
+  class="tabela-receitas">
+</po-table>
+
+  <!-- Modal de Nova Receita -->
+  <po-modal
+    #modal
+    p-title="Nova Receita"
+    [p-primary-action]="primaryAction"
+    [p-secondary-action]="secondaryAction">
+
+    <form [formGroup]="form" class="form-receita po-mt-3">
+
+      <div class="po-row po-mb-2">
+        <div class="po-md-6 po-sm-12">
+          <po-combo
+            p-label="Conta"
+            p-placeholder="Selecione a conta"
+            [p-options]="contasOptions"
+            formControlName="contaId"
+            [p-required]="true">
+          </po-combo>
+        </div>
+
+        <div class="po-md-6 po-sm-12">
+          <po-combo
+            p-label="Categoria"
+            p-placeholder="Selecione a categoria"
+            [p-options]="categoriasOptions"
+            formControlName="categoriaId"
+            [p-required]="true">
+          </po-combo>
+        </div>
+      </div>
+
+      <div class="po-row po-mb-2">
+        <div class="po-md-4 po-sm-12">
+          <po-decimal
+            p-label="Valor"
+            p-placeholder="0,00"
+            formControlName="valor"
+            p-required="false">
+          </po-decimal>
+        </div>
+
+        <div class="po-md-4 po-sm-12">
+          <po-datepicker
+            p-label="Data"
+            formControlName="data"
+            p-required="true">
+          </po-datepicker>
+        </div>
+
+        <div class="po-md-4 po-sm-12">
+          <po-input
+            p-label="Descrição"
+            p-placeholder="Ex: Salário, Freelance..."
+            formControlName="descricao">
+          </po-input>
+        </div>
+      </div>
+
+      <div class="po-row po-mt-3">
+        <div class="po-md-12 po-text-center info-ajuda">
+          <po-info
+            p-label="Dica"
+            p-value="Use descrições curtas e diretas. Você pode gerenciar suas contas e categorias nas telas de 'Contas' e 'Categorias'.">
+          </po-info>
+        </div>
+      </div>
+
+    </form>
+  </po-modal>
+
+  <!-- Mensagem quando não houver receitas -->
+  <div class="po-row po-mt-5" *ngIf="!items.length && !loading">
+    <div class="po-md-12 po-text-center">
+      <p class="mensagem-vazia">
+        Nenhuma receita cadastrada. Clique em <strong>"Nova Receita"</strong> para adicionar.
+      </p>
+    </div>
+  </div>
+
+</div>
