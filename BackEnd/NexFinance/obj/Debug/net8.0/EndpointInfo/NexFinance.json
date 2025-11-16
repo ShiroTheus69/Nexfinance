@@ -535,18 +535,6 @@
             "maxLength": 100,
             "minLength": 8,
             "type": "string"
-          },
-          "dispositivo": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "ip": {
-            "maxLength": 50,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
