@@ -19,15 +19,12 @@ namespace NexFinance.src.Application.Services {
         }
 
         public async Task<CategoriaDto> CreateAsync(CreateCategoriaDto dto, CancellationToken ct) {
-            // Converte string do DTO para enum com validação
             var tipo = dto.ToTipoMovimento();
 
             var categoria = new Categoria(dto.Nome, tipo, dto.Descricao);
 
-            // Persiste no banco
             await _repo.AddAsync(categoria, ct);
 
-            // Retorna DTO de leitura
             return new CategoriaDto(categoria.Id, categoria.Nome, categoria.Tipo.ToString(), categoria.Descricao);
         }
         public async Task<CategoriaDto?> GetByIdAsync(int id, CancellationToken ct = default) {

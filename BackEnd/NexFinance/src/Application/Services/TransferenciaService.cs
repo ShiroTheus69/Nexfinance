@@ -29,19 +29,13 @@ namespace NexFinance.src.Application.Services {
             if (dto.ContaOrigemId == dto.ContaDestinoId)
                 throw new ArgumentException("Contas iguais");
 
-            // transaction scope
             await using var tx = await _db.Database.BeginTransactionAsync(ct);
             try {
-                // valida se contas existem
                 var origem = await _contaRepo.GetByIdAsync(dto.ContaOrigemId, ct) ?? throw new InvalidOperationException("Conta origem não encontrada");
                 var destino = await _contaRepo.GetByIdAsync(dto.ContaDestinoId, ct) ?? throw new InvalidOperationException("Conta destino não encontrada");
 
-                // criar transferencia
                 var transferencia = new Transferencia(dto.UsuarioId, dto.ContaOrigemId, dto.ContaDestinoId, dto.Valor, dto.Data, dto.Descricao);
                 var created = await _repo.AddAsync(transferencia, ct);
-
-                // opcional: criar lançamentos de débito/crédito (regra de negócio)
-                // await _lancamentoRepo.AddAsync(...)
 
                 await tx.CommitAsync(ct);
                 return _mapper.Map<TransferenciaDto>(created);
@@ -65,8 +59,32 @@ namespace NexFinance.src.Application.Services {
             return _mapper.Map<IReadOnlyList<TransferenciaDto>>(list);
         }
 
-        public Task<(IReadOnlyList<TransferenciaDto> Items, int Total)> GetByUsuarioPagedAsync(int usuarioId, int page, int pageSize, CancellationToken ct = default) {
-            throw new NotImplementedException();
+        public async Task<(IReadOnlyList<TransferenciaDto> Items, int TotalCount)> GetByUsuarioPagedAsync(int usuarioId, int page, int pageSize, CancellationToken ct = default) {
+            if (usuarioId <= 0)
+                throw new ArgumentException("ID de usuário inválido.");
+
+            if (page <= 0 || pageSize <= 0)
+                throw new ArgumentException("Parâmetros de paginação inválidos.");
+
+            try {
+                var query = _db.Transferencias
+                    .AsNoTracking()
+                    .Where(t => t.UsuarioId == usuarioId)
+                    .OrderByDescending(t => t.DataCriacao);
+
+                var total = await query.CountAsync(ct);
+
+                var entities = await query
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync(ct);
+
+                var dtos = _mapper.Map<IReadOnlyList<TransferenciaDto>>(entities);
+
+                return (dtos, total);
+            } catch (Exception ex) {
+                throw new InvalidOperationException("Erro ao buscar transferências paginadas do usuário.", ex);
+            }
         }
 
         public Task UpdateAsync(int id, UpdateTransferenciaDto dto, CancellationToken ct = default) {
