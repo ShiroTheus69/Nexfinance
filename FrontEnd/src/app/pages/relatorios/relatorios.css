@@ -1,77 +1,71 @@
-/* ===== Layout base NexFinance ===== */
-:host {
-  display: block;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-po-page-default {
-  background-color: #F3F5F4 !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* ===== CONTAINER ===== */
 .relatorios-container {
-  margin: 0 auto;
-  width: 85%;
-  max-width: 1200px;
-  padding: 24px;
-  background-color: transparent;
-  min-height: calc(100vh - 64px);
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  background-color: #f3f4f6;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* ===== CABEÇALHO ===== */
-.cabecalho-relatorios {
+.header-top {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin-bottom: 16px;
+  align-items: center;
+  justify-content: space-between;
 }
 
-/* ===== WIDGET ===== */
-.widget-relatorios {
-  border-radius: 12px !important;
-  box-shadow: 0 4px 10px rgba(0, 107, 78, 0.15);
-  border: none !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.header-img {
+  width: 180px;
+  opacity: 0.9;
 }
 
-.widget-relatorios:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 107, 78, 0.25);
+.btn-gerar {
+  padding: 0.6rem 1.2rem;
+  background-color: #00796b;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-/* ===== TEXTO ===== */
-.mensagem-vazia {
-  color: #006B4E;
-  font-size: 1.2rem;
-  font-weight: 600;
+
+.btn-export {
+  padding: 0.6rem 1.2rem;
+  background-color: #00796b;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-export:hover {
+  background-color: #00796b;
+}
+
+
+/* Cards */
+.card {
+  flex: 1 1 250px;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-p {
-  color: #444;
-  font-size: 1rem;
-  margin: 0;
+.card.destaque {
+  border-left: 6px solid #10b981;
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 1024px) {
-  .relatorios-container {
-    width: 90%;
-  }
+.sub-info {
+  margin-top: .5rem;
+  font-size: .85rem;
+  color: #00796b;
 }
-
-@media (max-width: 768px) {
-  .relatorios-container {
-    width: 95%;
-    padding: 16px;
-  }
-  .cabecalho-relatorios {
-    justify-content: center;
-  }
+.card-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: .3rem;
 }

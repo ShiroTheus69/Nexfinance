@@ -1,19 +1,80 @@
-  <div class="relatorios-container">
-    <div class="po-row cabecalho-relatorios">
-      <div class="po-md-12">
-        <po-widget 
-          class="po-md-12 widget-relatorios" 
-          p-title="Relatórios Financeiros" 
-          [p-height]="220">
-          
-          <div class="po-text-center po-mt-4">
-            <p class="mensagem-vazia">Área de relatórios em desenvolvimento</p>
-            <p class="po-mt-2">
-              Aqui você poderá visualizar gráficos e análises das suas finanças.
-            </p>
-          </div>
+<div class="relatorios-container">
 
-        </po-widget>
+  <header class="relatorios-header">
+    <div class="header-top">
+      <div>
+        <h1>Relatórios Financeiros</h1>
+        <p>Veja insights sobre suas receitas, despesas e desempenho mensal.</p>
       </div>
+
+      <img src="assets/finance-illustration.svg" class="header-img" alt="Finance Illustration">
     </div>
-  </div>
+  </header>
+
+  <section class="relatorios-filtros">
+    <div class="filtro">
+      <label for="periodo">Período:</label>
+      <select id="periodo">
+        <option value="3m">Últimos 3 meses</option>
+        <option value="6m">Últimos 6 meses</option>
+        <option value="12m">Último ano</option>
+      </select>
+    </div>
+
+    <div class="filtro">
+      <label for="categoria">Categoria:</label>
+      <select id="categoria">
+        <option value="todas">Todas</option>
+        <option value="receitas">Receitas</option>
+        <option value="despesas">Despesas</option>
+      </select>
+    </div>
+
+    <button class="btn-gerar">Gerar Relatório</button>
+    <button class="btn-export">Exportar PDF</button>
+    <button class="btn-export">Exportar CSV</button>
+  </section>
+
+  <section class="relatorios-cards">
+
+    <div class="card destaque">
+      <h3>Saldo Total</h3>
+      <p class="valor positivo">R$ 2.450,00</p>
+      <p class="sub-info">+12% em relação ao mês anterior</p>
+    </div>
+
+    <div class="card">
+      <h3>Receitas</h3>
+      <p class="valor positivo">R$ 4.200,00</p>
+      <p class="sub-info">Maior receita: Maio</p>
+    </div>
+
+    <div class="card">
+      <h3>Despesas</h3>
+      <p class="valor negativo">R$ 1.750,00</p>
+      <p class="sub-info">Categoria mais cara: Alimentação</p>
+    </div>
+
+    <div class="card">
+      <h3>Crescimento Mensal</h3>
+      <p class="valor positivo">+8.5%</p>
+      <p class="sub-info">Comparado ao último mês</p>
+    </div>
+
+  </section>
+
+  <section class="relatorios-grafico">
+    <h2>Visão Geral Mensal</h2>
+
+    <po-chart 
+       
+      [p-categories]="categories" 
+      [p-series]="series">
+    </po-chart>
+  </section>
+
+  <footer class="relatorios-footer">
+    <p>Última atualização: {{ lastUpdate | date : 'dd/MM/yyyy - HH:mm' }}</p>
+  </footer>
+
+</div>
