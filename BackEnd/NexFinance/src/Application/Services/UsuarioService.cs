@@ -42,34 +42,41 @@ namespace NexFinance.src.Application.Services {
             if (string.IsNullOrWhiteSpace(dto.SenhaPlain) || dto.SenhaPlain.Length < 8)
                 throw new ArgumentException("Senha fraca");
 
-            var exist = await _repo.GetByEmailAsync(dto.Email, ct);
+            var exist = await _repo.GetByCpfAsync(dto.Cpf, ct);
             if (exist != null)
-                throw new InvalidOperationException("Email já cadastrado");
+                throw new InvalidOperationException("CPF já cadastrado");
 
             var hashed = BCrypt.Net.BCrypt.HashPassword(dto.SenhaPlain);
-            var usuario = new Usuario(dto.Nome.Trim(), dto.Cpf.Trim(), dto.Email.Trim().ToLowerInvariant(), hashed, dto.Idade, true);
+
+            var usuario = new Usuario(
+                dto.Nome.Trim(),
+                dto.Cpf.Trim(),
+                dto.Email.Trim().ToLowerInvariant(),
+                hashed,
+                dto.Idade,
+                true
+            );
 
             var created = await _repo.AddAsync(usuario, ct);
             return _mapper.Map<UsuarioDto>(created);
         }
+
 
         public Task<UsuarioDto?> GetByIdAsync(int id, CancellationToken ct = default) {
             return _repo.GetByIdAsync(id, ct)
                 .ContinueWith(t => t.Result is null ? null : _mapper.Map<UsuarioDto>(t.Result), ct);
         }
 
-        public async Task<UsuarioDto?> GetByEmailAsync(string email, CancellationToken ct = default) {
-            var u = await _repo.GetByEmailAsync(email, ct);
+        public async Task<UsuarioDto?> GetByEmailAsync(string cpf, CancellationToken ct = default) {
+            var u = await _repo.GetByCpfAsync(cpf, ct);
             return u == null ? null : _mapper.Map<UsuarioDto>(u);
         }
 
         public async Task<LoginResponseDto> LoginAsync(LoginDto dto, CancellationToken ct = default) {
-            if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Senha))
-                throw new ArgumentException("E-mail e senha são obrigatórios.");
+            if (string.IsNullOrWhiteSpace(dto.Cpf) || string.IsNullOrWhiteSpace(dto.Senha))
+                throw new ArgumentException("CPF e senha são obrigatórios.");
 
-            var email = dto.Email.Trim().ToLowerInvariant();
-
-            var usuario = await _repo.GetByEmailAsync(email, ct);
+            var usuario = await _repo.GetByCpfAsync(dto.Cpf.Trim(), ct);
             if (usuario == null)
                 throw new UnauthorizedAccessException("Usuário ou senha inválidos.");
 
@@ -85,7 +92,7 @@ namespace NexFinance.src.Application.Services {
                 Token = token,
                 ExpiraEm = expiraEm,
                 Nome = usuario.Nome,
-                Email = usuario.Email
+                Cpf = usuario.Cpf
             };
         }
 
@@ -93,7 +100,7 @@ namespace NexFinance.src.Application.Services {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senhaPlain))
                 throw new ArgumentException("Email e senha são obrigatórios.");
 
-            var usuario = await _repo.GetByEmailAsync(email.Trim().ToLowerInvariant(), ct);
+            var usuario = await _repo.GetByCpfAsync(email.Trim().ToLowerInvariant(), ct);
             if (usuario == null)
                 return null;
 

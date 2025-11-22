@@ -520,16 +520,16 @@
       },
       "LoginDto": {
         "required": [
-          "email",
+          "cpf",
           "senha"
         ],
         "type": "object",
         "properties": {
-          "email": {
-            "maxLength": 150,
-            "minLength": 0,
-            "type": "string",
-            "format": "email"
+          "cpf": {
+            "maxLength": 11,
+            "minLength": 11,
+            "pattern": "^[0-9]{11}$",
+            "type": "string"
           },
           "senha": {
             "maxLength": 100,

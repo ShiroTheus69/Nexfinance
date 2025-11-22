@@ -21,14 +21,15 @@ namespace NexFinance.src.Api.Controllers {
             return user is null ? NotFound() : Ok(user);
         }
 
-        // Authentication endpoint (returns token via service or auth layer)
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto dto, CancellationToken ct) {
-            var user = await _service.AuthenticateAsync(dto.Email, dto.Senha, ct);
+            var user = await _service.AuthenticateAsync(dto.Cpf, dto.Senha, ct);
+
             if (user is null)
                 return Unauthorized();
-            // token generation should be in an AuthService — here assume token already produced
+
             return Ok(user);
         }
+
     }
 }
