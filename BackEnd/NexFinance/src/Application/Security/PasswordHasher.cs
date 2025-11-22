@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 
 namespace NexFinance.src.Application.Security {
-    public static class PasswordHasher {
+    public static class BCrypt {
         private const int SaltSize = 16;
         private const int KeySize = 32;
         private const int Iterations = 120_000;
