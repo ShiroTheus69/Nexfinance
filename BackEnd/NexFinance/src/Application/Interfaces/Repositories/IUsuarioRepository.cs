@@ -2,7 +2,6 @@
 
 namespace NexFinance.src.Application.Interfaces.Repositories {
     public interface IUsuarioRepository : IAsyncRepository<Usuario> {
-        Task<Usuario?> GetByEmailAsync(string email, CancellationToken ct = default);
-    }
+        Task<Usuario?> GetByCpfAsync(string email, CancellationToken ct = default);}
 }
 
