@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexFinance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd9b082a281f3df25bf5d20e3454e0345ae409aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c6bbaf6aa71d848d6f65301677da5fe3023eb20")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexFinance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexFinance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
