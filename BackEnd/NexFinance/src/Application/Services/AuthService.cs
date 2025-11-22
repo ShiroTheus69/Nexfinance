@@ -28,7 +28,7 @@ namespace NexFinance.src.Application.Services {
             if (user == null)
                 return null;
 
-            if (!PasswordHasher.Verify(dto.Senha, user.SenhaHash))
+            if (!BCrypt.Net.BCrypt.Verify(dto.Senha, user.SenhaHash))
                 return null;
 
             var tokenHandler = new JwtSecurityTokenHandler();

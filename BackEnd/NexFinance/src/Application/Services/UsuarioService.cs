@@ -96,11 +96,14 @@ namespace NexFinance.src.Application.Services {
             };
         }
 
-        public async Task<UsuarioDto?> AuthenticateAsync(string email, string senhaPlain, CancellationToken ct = default) {
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senhaPlain))
-                throw new ArgumentException("Email e senha são obrigatórios.");
+        public async Task<UsuarioDto?> AuthenticateAsync(string cpf, string senhaPlain, CancellationToken ct = default) {
+            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrWhiteSpace(senhaPlain))
+                throw new ArgumentException("Cpf e senha são obrigatórios.");
 
-            var usuario = await _repo.GetByCpfAsync(email.Trim().ToLowerInvariant(), ct);
+            // CPF é só numero, nunca minúsculo
+            cpf = cpf.Trim();
+
+            var usuario = await _repo.GetByCpfAsync(cpf, ct);
             if (usuario == null)
                 return null;
 
